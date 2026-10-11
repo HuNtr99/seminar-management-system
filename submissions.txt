@@ -1,0 +1,1 @@
+ST001|Autonomous Agents Architecture|Research on agentic workflow systems|Dr. Sarah Smith|Oral|sample_presentation.pdf

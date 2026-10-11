@@ -1,0 +1,12 @@
+# Compiler outputs
+bin/
+*.class
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+*.iml
+.idea/
+.vscode/

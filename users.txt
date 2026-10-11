@@ -1,0 +1,3 @@
+admin,admin123,Prof. Davis,admin@university.edu,Coordinator
+ST001,student123,John Doe,john@university.edu,Student
+EV001,eval123,Dr. Sarah Smith,smith@university.edu,Evaluator
