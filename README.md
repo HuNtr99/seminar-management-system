@@ -1,25 +1,43 @@
-# Academic Research Presentation & Evaluation System
+# Seminar Management System (SMS)
 
-A multi-role academic assessment management system built with **Java Swing**, designed to streamline research symposium submissions, evaluation scoring rubrics, and session coordination.
+A standalone **Java Swing** desktop application developed for the Faculty of Computing and Informatics (FCI) to streamline annual **Postgraduate Academic Research Seminars**.
+
+Designed following **Object-Oriented Analysis and Design (OOAD)** principles and persistent file-based data structures.
 
 ---
 
-## 👥 Role-Based Architecture
+## 👥 System Architecture & User Roles
 
-### 1. Student Portal (`StudentDashboard.java`)
-- Register research topic, abstract, presentation type (Oral vs Poster), and designated supervisor.
-- Attach presentation slides/documents with real-time submission confirmation.
-- Modern dual-panel layout with custom styled Swing components.
+The system implements a centralized `User` inheritance hierarchy with role-specific dashboards:
 
-### 2. Evaluator Portal (`EvaluatorDashboard.java`)
-- Review student research submissions and evaluate assigned presentations.
-- Interactive rubric scoring criteria (Methodology, Clarity, Technical Depth, Q&A).
-- Automated grade aggregation with qualitative written feedback.
+### 1. 🎓 Student Module (`StudentDashboard.java`)
+- **Research Registration:** Submit presentation details (Title, Abstract, Supervisor, and Presentation Type: *Oral* vs *Poster*).
+- **Presentation Upload:** Register and link presentation files/slides.
+- **Visual Status Tracking:** Modern split-pane Swing layout with real-time feedback.
 
-### 3. Coordinator Dashboard (`CoordinatorDashboard.java`)
-- Manage evaluation sessions, timetable allocations, and hall assignments.
-- Real-time tracking of submission statuses and evaluator assignments.
-- Session scheduling connecting students with evaluators.
+### 2. 👨‍🏫 Evaluator Module (`EvaluatorDashboard.java`)
+- **Review Submissions:** Access assigned student research abstracts and materials.
+- **Rubric Scoring System:** Interactive numerical scoring criteria across:
+  - Methodology & Technical Depth
+  - Presentation Clarity & Structure
+  - Research Significance
+  - Q&A Defense
+- **Feedback Generation:** Calculate total scores out of 40 and record qualitative feedback comments.
+
+### 3. 🏛️ Coordinator Module (`CoordinatorDashboard.java`)
+- **Session Scheduling:** Assign examination dates, halls, students, and evaluators.
+- **Symposium Overview:** Track live progress of all registered presentations.
+- **CSV Report Export:** Automatically compile and export comprehensive symposium results to `Seminar_Report.csv`.
+
+---
+
+## 📐 UML Class Architecture
+
+The complete system architecture and class diagrams are included in [`docs/UML_Class_Diagram.pdf`](docs/UML_Class_Diagram.pdf):
+- **Base Class:** `User` (`username`, `password`, `name`, `email`, `role`)
+- **Derived Classes:** `Student`, `Evaluator`, `Coordinator`
+- **Persistence Layer:** `FileHandler` (`users.txt`, `sessions.txt`, `submissions.txt`, `evaluations.txt`)
+- **Controller/UI:** `LoginFrame`, `StudentDashboard`, `EvaluatorDashboard`, `CoordinatorDashboard`
 
 ---
 
